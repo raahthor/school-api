@@ -5,7 +5,7 @@ dotenv.config();
 const isProduction = process.env.NODE_ENV === "production";
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: "postgres",
+  dialect: "mysql",
   logging: false,
   dialectOptions: isProduction
     ? { ssl: { require: true, rejectUnauthorized: false } }
@@ -19,7 +19,7 @@ const connectDB = async () => {
     await sequelize.sync({ alter: true });
     console.log("synced successfully");
   } catch (err) {
-    console.error("database connection failed : ", err.messsage);
+    console.error("database connection failed : ", err.message);
     process.exit(1);
   }
 };
@@ -29,7 +29,7 @@ const startDB = async () => {
     await connectDB();
     console.log("database connected");
   } catch (error) {
-    console.error("db not connected : ", error.messsage);
+    console.error("db not connected : ", error.message);
   }
 };
 

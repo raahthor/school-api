@@ -6,7 +6,7 @@ import listSchools from "../controllers/listSchools.controller.js";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("hello");
+  res.send("hello, access other endpoints using postman or similar service");
 });
 
 router.post("/addSchool", validateData, addSchool);

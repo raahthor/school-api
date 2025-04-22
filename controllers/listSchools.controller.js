@@ -13,12 +13,13 @@ export default async function listSchools(req, res) {
   }
   const schools = await School.findAll();
   const schoolsWithDis = schools.map((school) => {
-    const distance = getDistance(
+    const distanceFloat = getDistance(
       userLat,
       userLon,
       school.latitude,
       school.longitude
     );
+    const distance = Math.floor(distanceFloat * 100) / 100;
     return { ...school.toJSON(), distance };
   });
 
@@ -26,7 +27,7 @@ export default async function listSchools(req, res) {
   res.json({
     success: true,
     message:
-      "Nearest schools to your location fetched successfully ( distance is in KMs ).",
+      "Nearest schools to your location ( distance is in KMs ).",
     schools: sortedSchools,
   });
 }

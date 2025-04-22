@@ -1,7 +1,7 @@
 {
   "name": "school-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "a api system that adds school to database and returns nearest schools to your coordinates",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Prashant",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -17,7 +17,6 @@
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
     "mysql2": "^3.14.0",
-    "pg": "^8.14.1",
     "sequelize": "^6.37.7"
   }
 }
