@@ -1,7 +1,7 @@
 import express from "express";
 import addSchool from "../controllers/addSchool.controller.js";
 import { validateData } from "../utils/validateData.js";
-import getSchools from "../controllers/getSchools.controller.js";
+import listSchools from "../controllers/listSchools.controller.js";
 
 const router = express.Router();
 
@@ -11,6 +11,6 @@ router.get("/", (req, res) => {
 
 router.post("/addSchool", validateData, addSchool);
 
-router.get("/listSchools", getSchools);
+router.get("/listSchools", listSchools);
 
 export default router;
