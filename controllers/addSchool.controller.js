@@ -1,4 +1,4 @@
-import School from "../database/schools.model";
+import School from "../database/schools.model.js";
 
 export default async function addSchool(req, res) {
   const { name, address, latitude, longitude } = req.body;
